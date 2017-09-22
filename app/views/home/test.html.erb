@@ -1,0 +1,7 @@
+
+   
+     <%#= link_to "#{test.testname}", test_submit_path(testid: test) %>
+     <%@test.questions.each do |question|%>
+    <%=question.qname%>
+   <% end %>
+ 
