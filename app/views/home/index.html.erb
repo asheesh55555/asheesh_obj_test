@@ -1,4 +1,5 @@
 <%#= form_with(model: @testcategory, local: true) do |form| %>
+<%if current_user.admin == true%>
 <%= nested_form_for @testcategory do |form| %>
   <% if @testcategory.errors.any? %>
     <div id="error_explanation">
@@ -76,11 +77,12 @@
 
 
 
-
+<%else%>
 
 
 <% @tests.each do |test| %>
    
      <%= link_to "#{test.testname}", test_submit_path(testid: test) %>
    
+  <% end %>
   <% end %>
